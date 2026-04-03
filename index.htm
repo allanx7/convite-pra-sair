@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Convite 😏</title>
+<link rel="shortcut icon" href="coracao.png" type="image/x-icon">
+<style>
+body {
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #1e293b;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+button {
+  padding: 15px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sim {
+  background: #22c55e;
+  color: white;
+}
+
+.nao {
+  background: #ef4444;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #94a3b8;
+}
+
+a {
+    font-size: 20px;
+  color: #3363a7;
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💌</h1>
+  <p>Confesso que queria te ver fora da escola… quer sair comigo?</p>
+<section>
+    <a href="https://youtu.be/jDUYWjf-2kQ?si=MQb5GQVzJFKS66-C" target="_blank">youtube</a>
+</section>
+  <button class="sim" onclick="aceitou()">Sim 😍</button>
+  <button class="nao">Não 😢</button>
+</div>
+
+<script>
+// BOTÃO NÃO FUGINDO
+const botaoNao = document.querySelector('.nao');
+
+botaoNao.addEventListener('mouseover', () => {
+  const largura = window.innerWidth - 100;
+  const altura = window.innerHeight - 50;
+
+  botaoNao.style.position = 'absolute';
+  botaoNao.style.left = Math.random() * largura + 'px';
+  botaoNao.style.top = Math.random() * altura + 'px';
+});
+
+// QUANDO CLICA NO SIM
+function aceitou() {
+  alert("tem capacete?");
+}
+</script>
+<footer>
+  <p>&copy; 2026 <a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw">meu instagram</a></p>
+  <p>foi totalmente feito pra você.</p>
+</footer>
+</body>
+</html>
