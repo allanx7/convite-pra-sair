@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <meta charset="UTF-8">
-<title>Convite 😏</title>
-<link rel="shortcut icon" href="coracao.png" type="image/x-icon">
+<title>💌 Um convite</title>
+
 <style>
 body {
-  background: #0f172a;
-  color: #f8fafc;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  font-family: Arial, sans-serif;
+  color: #f8fafc;
 }
 
 .container {
-  background: #1e293b;
-  padding: 50px;
+  width: 400px;
+  background: rgba(30, 41, 59, 0.9);
+  padding: 40px;
   border-radius: 20px;
+  width: 350px;
   text-align: center;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
+.poema {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
 button {
-  padding: 15px 25px;
+  padding: 12px 20px;
   margin: 10px;
   border: none;
-  border-radius: 12px;
-  font-size: 18px;
+  border-radius: 10px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -41,62 +51,66 @@ button {
 .nao {
   background: #ef4444;
   color: white;
+  transition: 0.3s;
+}
+
+/* EFEITO TRISTE 💔 */
+.nao:hover {
+  transform: scale(0.8);
+  opacity: 0.6;
+  filter: grayscale(80%);
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 footer {
+
   position: fixed;
   bottom: 10px;
   width: 100%;
   text-align: center;
   color: #94a3b8;
-}
-
-a {
-    font-size: 20px;
-  color: #3363a7;
-  text-decoration: none;
-}
-
+  font-size: 20px;
+  }
 </style>
 </head>
 
 <body>
 
 <div class="container">
-  <h1>💌</h1>
-  <p>Confesso que queria te ver fora da escola… quer sair comigo?</p>
-<section>
-    <a href="https://youtu.be/jDUYWjf-2kQ?si=MQb5GQVzJFKS66-C" target="_blank">youtube</a>
-</section>
+  <h2>💌</h2>
+
+  <div class="poema">
+    Às vezes, no meio de um dia comum,<br>
+    aparece alguém que muda o clima sem perceber.<br><br>
+
+    E entre conversas simples e risadas leves,<br>
+    nasce aquela vontade de querer estar perto…<br>
+    só pra ver onde isso pode dar.
+  </div>
+
+  <p><strong>Então me diz…</strong></p>
+  <p>topa sair comigo esse fim de semana? </p>
+
   <button class="sim" onclick="aceitou()">Sim 😍</button>
-  <button class="nao">Não 😢</button>
+  <button class="nao" onclick="recusou()">Não 😢</button>
 </div>
 
 <script>
-// BOTÃO NÃO FUGINDO
-const botaoNao = document.querySelector('.nao');
-
-botaoNao.addEventListener('mouseover', () => {
-  const largura = window.innerWidth - 100;
-  const altura = window.innerHeight - 50;
-
-  botaoNao.style.position = 'absolute';
-  botaoNao.style.left = Math.random() * largura + 'px';
-  botaoNao.style.top = Math.random() * altura + 'px';
-});
-
-// QUANDO CLICA NO SIM
 function aceitou() {
-  alert("tem capacete?");
+  alert("perfeito, de busco as 19hrs?");
+}
+
+function recusou() {
+  alert("undaia....");
 }
 </script>
+
 <footer>
-  <p>&copy; 2026 <a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw">meu instagram</a></p>
-  <p>foi totalmente feito pra você.</p>
+  <p>&copy; se querer me chama no insta <a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw" target="_blank">instagram</a></p>
 </footer>
+
 </body>
 </html>
