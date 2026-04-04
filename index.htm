@@ -4,8 +4,43 @@
 <head>
 <meta charset="UTF-8">
 <title>💌 Um convite</title>
-
+<div id="notificaçao" class="notificaçao">
+  <div class="notificaçao-configuraçao">
+<p>abre rapidinho 😅</p>
+<button onclick="fecharNotificacao()">Fechar</button>
+  </div>
+</div>
 <style>
+
+#notificaçao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+}
+.notificaçao-configuraçao {
+  
+  background: rgb(0, 0, 0);
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.notificaçao-configuraçao button {
+  margin: 21px;
+  padding: 10px 10px;
+border: none;
+border-radius: 15px;
+color: tomato;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -109,15 +144,12 @@ footer a {
   <h2>💌</h2>
 
   <div class="poema">
-    Às vezes, no meio de um dia comum,<br>
-    aparece alguém que muda o clima sem perceber.<br><br>
-
-    E entre conversas simples e risadas leves,<br>
-    nasce aquela vontade de querer estar perto…<br>
-    só pra ver onde isso pode dar.
+   eu achei voce bonita, principalmente seu cabelo<br>
+    e seu jeito... mas nunca soube como chegar.<br>
+    entao eu fiz isso de um jeito diferente...<br>
   </div>
 
-  <p>quer sair comigo sabado?</p>
+  <p>quer sair comigo?</p>
 
   <button class="sim" onclick="aceitou()">Sim 😍</button>
   <button class="nao" onclick="recusou()">Não 😢</button>
@@ -125,14 +157,13 @@ footer a {
 </div>
 
 <script>
-  alert("um convite!");
-
+ 
   function aceitou() {
     alert("busco voce, as 19:00 horas?");
     sim();
   }
   function recusou() {
-    alert("vou fingir que nao doeu,");
+    alert("vou fingir que nao doeu.");
     nao();
   }
 function criarEmoji(lista) {
@@ -166,9 +197,19 @@ function sim() {
 function nao() {
     chuva(["😢","💔","😭","😞","🥀"]);
 }
+
+function fecharNotificacao() {
+  document.getElementById("notificaçao").style.display = "none";
+}
+
+window.onload = function() {
+  setTimeout(() => {
+    document.getElementById("notificaçao").style.display = "flex";
+  }, 89000);
+};
 </script>
 
 <footer>
   <p><a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw" target="_blank">meu insta!</a></p>
-  <p>so me mandar um oi</p>
+  <p>&uarr;</p>
 </footer>
