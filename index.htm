@@ -106,7 +106,26 @@ footer a {
     border-color: transparent;
   }
 }
+.emoji {
+    position: fixed;
+    top: 0; /* começa no topo visível */
+    left: 0;
+    font-size: 30px;
+    pointer-events: none; /* não bloqueia clique */
+    z-index: 9999; /* fica na frente de tudo */
+    animation: cair 3s linear forwards;
+}
 
+@keyframes cair {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh); /* garante que sai da tela */
+        opacity: 0;
+    }
+}
 </style>
 </head>
 
@@ -124,27 +143,58 @@ footer a {
     só pra ver onde isso pode dar.
   </div>
 
-  <p>bora sair qualquer dia? to afim de te conhecer melhor? </p>
+  <p>vamos sair estou, afim de te conhecer melhor? </p>
 
   <button class="sim" onclick="aceitou()">Sim 😍</button>
   <button class="nao" onclick="recusou()">Não 😢</button>
+  
 </div>
 
 <script>
-function aceitou() {
-  alert("perfeito, te busco as 19hrs?");
+  alert("Leia com atenção, é importante Demorei um pouco pra fazer!");
+
+  function aceitou() {
+    alert("busco voce, as 19:00 horas?");
+    sim();
+  }
+  function recusou() {
+    alert("vou fingir que nao doeu,");
+    nao();
+  }
+function criarEmoji(lista) {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.innerText = lista[Math.floor(Math.random() * lista.length)];
+
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(() => {
+        emoji.remove();
+    }, 3000);
 }
 
-function recusou() {
-  alert("undaia....");
+function chuva(lista) {
+    let i = 0;
+    let intervalo = setInterval(() => {
+        criarEmoji(lista);
+        i++;
+        if (i > 60) clearInterval(intervalo);
+    }, 40);
+}
+
+function sim() {
+    chuva(["😍","❤️","🥰","😘","💖","🎉"]);
+}
+
+function nao() {
+    chuva(["😢","💔","😭","😞","🥀"]);
 }
 </script>
 
 <footer>
-  <p>&copy; se querer me chama no  <a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw" target="_blank">instagram </a></p>
-<p class="assinatura"> allan santana </p>
-
+  <p><a href="https://www.instagram.com/alanzik___?igsh=bzA4dnMwMnc4dXdw" target="_blank">meu insta!</a></p>
+  <p>so me mandar um oi</p>
 </footer>
-
-</body>
-</html>
