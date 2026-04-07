@@ -7,7 +7,7 @@
 <div id="notificaçao" class="notificaçao">
   <div class="notificaçao-configuraçao">
 <p>abre rapidinho 😅</p>
-<button onclick="fecharNotificacao()">Fechar</button>
+<button onclick="fecharNotificacao()">abrir</button>
   </div>
 </div>
 <style>
@@ -28,7 +28,7 @@
 .notificaçao-configuraçao {
   
   background: rgb(0, 0, 0);
-  padding: 50px;
+  padding: 100%;
   border-radius: 10px;
   text-align: center;
 }
@@ -135,6 +135,11 @@ footer a {
         opacity: 0;
     }
 }
+h1
+{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
 </style>
 </head>
 
@@ -144,26 +149,30 @@ footer a {
   <h2>💌</h2>
 
   <div class="poema">
-   eu achei voce bonita, principalmente seu cabelo<br>
-    e seu jeito... mas nunca soube como chegar.<br>
-    entao eu fiz isso de um jeito diferente...<br>
+   
+   Agora fiquei curioso se você teria coragem de me chamar.
   </div>
 
-  <p>quer sair comigo?</p>
-
+  <p>ou vai finjir Não viu</p>
   <button class="sim" onclick="aceitou()">Sim 😍</button>
   <button class="nao" onclick="recusou()">Não 😢</button>
-  
+  </form>
 </div>
 
 <script>
  
+
+
+
+
+
+
   function aceitou() {
-    alert("te pego que horas, as 19:00 horas?");
+    alert("Bom… você clicou\n e acho que meu insta tava aqui...");
     sim();
   }
   function recusou() {
-    alert("vou fingir que nao doeu.");
+    alert("Então pelo menos você já conheceu meu trabalho");
     nao();
   }
 function criarEmoji(lista) {
@@ -191,7 +200,7 @@ function chuva(lista) {
 }
 
 function sim() {
-    chuva(["😍","❤️","🥰","😘","💖","🎉"]);
+    chuva(["😒","😅","🫥","😘","🧐","🎉"]);
 }
 
 function nao() {
